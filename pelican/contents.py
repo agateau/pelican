@@ -224,6 +224,9 @@ class Content(object):
                 origin = Category(path, self.settings).url
             elif what == 'tag':
                 origin = Tag(path, self.settings).url
+            elif what == 'dirname':
+                origin = '/'.join((siteurl,
+                    os.path.join(self.relative_dir, path)))
 
             # keep all other parts, such as query, fragment, etc.
             parts = list(value)
