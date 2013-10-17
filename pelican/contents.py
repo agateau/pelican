@@ -226,6 +226,8 @@ class Content(object):
                 origin = join_siteurl(Category(path, self.settings).url)
             elif what == 'tag':
                 origin = join_siteurl(Tag(path, self.settings).url)
+            elif what == 'dirname':
+                origin = join_siteurl(os.path.join(self.relative_dir, path))
 
             # keep all other parts, such as query, fragment, etc.
             parts = list(value)
